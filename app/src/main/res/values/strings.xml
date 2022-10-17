@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Pizza</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_an_order">Create a new order</string>
+    <string name="order_pizza">Order pizza</string>
+</resources>
