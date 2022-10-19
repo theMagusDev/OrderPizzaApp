@@ -18,5 +18,14 @@
         android:id="@+id/flavorFragment"
         android:name="com.example.pizza.FlavorFragment"
         android:label="fragment_flavor"
-        tools:layout="@layout/fragment_flavor" />
+        tools:layout="@layout/fragment_flavor" >
+        <action
+            android:id="@+id/action_flavorFragment_to_sizeFragment"
+            app:destination="@id/sizeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sizeFragment"
+        android:name="com.example.pizza.SizeFragment"
+        android:label="fragment_size"
+        tools:layout="@layout/fragment_size" />
 </navigation>

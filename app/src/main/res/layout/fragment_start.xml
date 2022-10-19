@@ -22,8 +22,8 @@
             android:padding="@dimen/side_margin">
 
             <ImageView
-                android:layout_width="@dimen/image_size"
-                android:layout_height="@dimen/image_size"
+                android:layout_width="@dimen/start_image_size"
+                android:layout_height="@dimen/start_image_size"
                 android:src="@drawable/pizza"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/margin_between_elements"

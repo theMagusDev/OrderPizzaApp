@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="image_size">300dp</dimen>
+    <dimen name="start_image_size">300dp</dimen>
+    <dimen name="pizza_30cm_image_size">155dp</dimen>
+    <dimen name="pizza_45cm_image_size">215dp</dimen>
+    <dimen name="margin_from_top">56dp</dimen>
     <dimen name="side_margin">16dp</dimen>
     <dimen name="margin_between_elements">8dp</dimen>
 </resources>
