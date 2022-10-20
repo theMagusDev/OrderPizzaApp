@@ -8,9 +8,10 @@ import androidx.fragment.app.Fragment
 import com.example.pizza.databinding.FragmentFlavorBinding
 
 class FlavorFragment : Fragment() {
-    // Binding object instance corresponding to the fragment_start.xml layout
-    // This property is non-null between the onCreateView() and onDestroyView() lifecycle callbacks,
-    // when the view hierarchy is attached to the fragment.
+    /* Binding object instance corresponding to the fragment_start.xml layout
+    * This property is non-null between the onCreateView() and onDestroyView() lifecycle callbacks,
+    * when the view hierarchy is attached to the fragment.
+    */
     private var binding: FragmentFlavorBinding? = null
 
     override fun onCreateView(
@@ -21,6 +22,14 @@ class FlavorFragment : Fragment() {
         val fragmentFlavorBinding = FragmentFlavorBinding.inflate(inflater, container, false)
         binding = fragmentFlavorBinding
         return fragmentFlavorBinding.root
+    }
+
+    /*
+    Assign a fragment value to the layout variable so that it can reference that fragment.
+     */
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding?.flavorFragment = this
     }
 
     /**
