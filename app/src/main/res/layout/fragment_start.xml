@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".StartFragment">
+    tools:context=".ui.order.StartFragment">
 
     <data>
         <variable
             name="startFragment"
-            type="com.example.pizza.StartFragment" />
+            type="com.example.pizza.ui.order.StartFragment" />
     </data>
 
     <ScrollView

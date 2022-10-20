@@ -3,12 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".FlavorFragment">
+    tools:context=".ui.order.FlavorFragment">
 
     <data>
         <variable
             name="flavorFragment"
-            type="com.example.pizza.FlavorFragment" />
+            type="com.example.pizza.ui.order.FlavorFragment" />
+
+        <variable
+            name="orderViewModel"
+            type="com.example.pizza.ui.order.OrderViewModel" />
     </data>
 
     <ScrollView
@@ -38,7 +42,8 @@
                 android:id="@+id/bacon_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bacon"
+                android:text="@string/bacon"
+                android:onCheckedChanged="@{() -> orderViewModel.addOrRemoveFlavor(@string/bacon)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/selection_hint"/>
 
@@ -47,7 +52,8 @@
                 android:id="@+id/extra_cheese_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Extra Cheese"
+                android:text="@string/extra_cheese"
+                android:onCheckedChanged="@{() -> orderViewModel.addOrRemoveFlavor(@string/extra_cheese)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/bacon_checkbox"/>
 
@@ -56,7 +62,8 @@
                 android:id="@+id/mushrooms_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mushrooms"
+                android:text="@string/mushrooms"
+                android:onCheckedChanged="@{() -> orderViewModel.addOrRemoveFlavor(@string/mushrooms)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/extra_cheese_checkbox"/>
 
@@ -65,7 +72,8 @@
                 android:id="@+id/onions_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Onions"
+                android:text="@string/onions"
+                android:onCheckedChanged="@{() -> orderViewModel.addOrRemoveFlavor(@string/onions)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/mushrooms_checkbox"/>
 
@@ -75,6 +83,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sausage"
+                android:onCheckedChanged="@{() -> orderViewModel.addOrRemoveFlavor(@string/sausage)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/onions_checkbox"/>
 

@@ -1,4 +1,4 @@
-package com.example.pizza
+package com.example.pizza.ui.order
 
 import android.os.Bundle
 import android.view.LayoutInflater

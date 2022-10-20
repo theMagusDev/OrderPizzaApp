@@ -1,10 +1,11 @@
-package com.example.pizza
+package com.example.pizza.ui.order
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.pizza.R
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 

@@ -2,12 +2,15 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SizeFragment">
+    tools:context=".ui.order.SizeFragment">
     
     <data>
         <variable
             name="sizeFragment"
-            type="com.example.pizza.SizeFragment" />
+            type="com.example.pizza.ui.order.SizeFragment" />
+        <variable
+            name="orderViewModel"
+            type="com.example.pizza.ui.order.OrderViewModel" />
     </data>
     
     <ScrollView
@@ -37,6 +40,7 @@
                 android:scaleType="centerCrop"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="@string/pizza_30_cm"
+                android:onClick="@{() -> orderViewModel.setSize(30)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/pizza_45cm_button"
                 app:layout_constraintTop_toTopOf="@id/pizza_45cm_button"
@@ -51,16 +55,17 @@
                 android:scaleType="centerCrop"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="@string/pizza_45_cm"
+                android:onClick="@{() -> orderViewModel.setSize(45)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/pizza_30cm_button"
-                app:layout_constraintTop_toTopOf="@id/selection_hint"/>
+                app:layout_constraintTop_toBottomOf="@id/selection_hint"/>
             
             <TextView
                 android:id="@+id/your_pizza_size_textview"
                 style="?attr/textAppearanceBody1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{@string/your_pizzas_size}"
+                android:text="@{orderViewModel.size_text}"
                 android:layout_margin="@dimen/margin_between_elements"
                 app:layout_constraintStart_toStartOf="parent" 
                 app:layout_constraintEnd_toEndOf="parent"

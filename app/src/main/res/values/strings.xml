@@ -12,4 +12,8 @@
     <string name="choose_toppings">Choose toppings:</string>
     <string name="main_headline">Main:</string>
     <string name="sausage">Sausage</string>
+    <string name="bacon">Bacon</string>
+    <string name="extra_cheese">Extra Cheese</string>
+    <string name="mushrooms">Mushrooms</string>
+    <string name="onions">Onions</string>
 </resources>
