@@ -43,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/bacon"
-                android:onCheckedChanged="@{() -> orderViewModel.addOrRemoveFlavor(@string/bacon)}"
+                android:onClick="@{() -> orderViewModel.addOrRemoveFlavor(@string/bacon)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/selection_hint"/>
 
@@ -53,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/extra_cheese"
-                android:onCheckedChanged="@{() -> orderViewModel.addOrRemoveFlavor(@string/extra_cheese)}"
+                android:onClick="@{() -> orderViewModel.addOrRemoveFlavor(@string/extra_cheese)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/bacon_checkbox"/>
 
@@ -63,7 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/mushrooms"
-                android:onCheckedChanged="@{() -> orderViewModel.addOrRemoveFlavor(@string/mushrooms)}"
+                android:onClick="@{() -> orderViewModel.addOrRemoveFlavor(@string/mushrooms)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/extra_cheese_checkbox"/>
 
@@ -73,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/onions"
-                android:onCheckedChanged="@{() -> orderViewModel.addOrRemoveFlavor(@string/onions)}"
+                android:onClick="@{() -> orderViewModel.addOrRemoveFlavor(@string/onions)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/mushrooms_checkbox"/>
 
@@ -83,11 +83,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sausage"
-                android:onCheckedChanged="@{() -> orderViewModel.addOrRemoveFlavor(@string/sausage)}"
+                android:onClick="@{() -> orderViewModel.addOrRemoveFlavor(@string/sausage)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/onions_checkbox"/>
 
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/flavors_divider"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_between_elements"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sausage_checkbox"/>
 
+            <com.google.android.material.button.MaterialButton
+                style="@style/next_button_style"
+                android:onClick="@{() -> flavorFragment.goToNextScreen()}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/flavors_divider"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
