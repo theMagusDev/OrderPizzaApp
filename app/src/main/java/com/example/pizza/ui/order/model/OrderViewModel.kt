@@ -1,4 +1,4 @@
-package com.example.pizza.ui.order
+package com.example.pizza.ui.order.model
 
 import android.util.Log
 import androidx.lifecycle.LiveData

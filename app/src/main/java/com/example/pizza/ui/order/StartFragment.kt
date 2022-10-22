@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.pizza.R
 import com.example.pizza.databinding.FragmentStartBinding
+import com.example.pizza.ui.order.model.OrderViewModel
 
 class StartFragment : Fragment() {
 

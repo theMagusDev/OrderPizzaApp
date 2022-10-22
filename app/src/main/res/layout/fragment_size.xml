@@ -10,7 +10,7 @@
             type="com.example.pizza.ui.order.SizeFragment" />
         <variable
             name="orderViewModel"
-            type="com.example.pizza.ui.order.OrderViewModel" />
+            type="com.example.pizza.ui.order.model.OrderViewModel" />
     </data>
     
     <ScrollView

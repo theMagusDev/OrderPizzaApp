@@ -1,7 +1,6 @@
 package com.example.pizza.ui.order
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.pizza.R
 import com.example.pizza.databinding.FragmentFlavorBinding
+import com.example.pizza.ui.order.model.OrderViewModel
 
 class FlavorFragment : Fragment() {
     /* Binding object instance corresponding to the fragment_start.xml layout
@@ -43,7 +43,6 @@ class FlavorFragment : Fragment() {
 
     fun goToNextScreen () {
         findNavController().navigate(R.id.action_flavorFragment_to_sizeFragment)
-        //Log.d("OrderViewModel", sharedOrderViewModel.flavors.toString().plus(" <-- _flavors var;"))
     }
 
     /**
