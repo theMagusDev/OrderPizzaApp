@@ -11,11 +11,23 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="@dimen/side_margin">
 
-            <CalendarView
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                style="@style/pickup_radiobutton_style"
+                android:id="@+id/today_pickup_option"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:text="Mon. 31 August"/>
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/next_button_style"
+                app:layout_constraintTop_toBottomOf="@id/today_pickup_option"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

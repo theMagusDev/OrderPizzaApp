@@ -5,14 +5,21 @@
         <item name="android:layout_marginTop">@dimen/margin_between_elements</item>
         <item name="android:layout_marginBottom">@dimen/margin_between_elements</item>
     </style>
+
     <style name="next_button_style" parent="Widget.MaterialComponents.Button">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:text">@string/next_button_text</item>
         <item name="android:layout_margin">@dimen/margin_between_elements</item>
     </style>
+
     <style name="order_price_text_style" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">20sp</item>
         <item name="android:layout_margin">@dimen/side_margin</item>
+    </style>
+
+    <style name="pickup_radiobutton_style" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:layout_marginTop">@dimen/margin_between_elements</item>
+        <item name="android:layout_marginBottom">@dimen/margin_between_elements</item>
     </style>
 </resources>
