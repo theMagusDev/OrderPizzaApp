@@ -35,6 +35,8 @@ class FlavorFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding?.apply {
+            lifecycleOwner = viewLifecycleOwner
+
             flavorFragment = this@FlavorFragment
 
             orderViewModel = sharedOrderViewModel

@@ -5,12 +5,13 @@
     <string name="create_an_order">Create a new order</string>
     <string name="order_pizza">Order pizza</string>
     <string name="next_button_text">Next</string>
-    <string name="your_pizzas_size">Your pizza\'s size: %s</string>
+    <string name="your_pizzas_size">Your pizza\'s size: %d\cm</string>
     <string name="choose_the_pizza_size">Choose the pizza\'s size:</string>
     <string name="pizza_45_cm">45 centimeter pizza</string>
     <string name="pizza_30_cm">30 centimeter pizza</string>
     <string name="choose_toppings">Choose toppings:</string>
     <string name="main_headline">Main:</string>
+    <string name="price">Price: %f</string>
     <string name="sausage">Sausage</string>
     <string name="bacon">Bacon</string>
     <string name="extra_cheese">Extra Cheese</string>

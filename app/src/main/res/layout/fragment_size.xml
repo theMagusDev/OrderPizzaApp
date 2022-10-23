@@ -19,7 +19,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="@dimen/side_margin">
             
             <TextView
                 style="?attr/textAppearanceHeadline4"
@@ -28,6 +29,7 @@
                 android:layout_height="wrap_content" 
                 android:text="@string/choose_the_pizza_size"
                 android:layout_marginTop="@dimen/margin_between_elements"
+                android:textAlignment="center"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
@@ -38,7 +40,7 @@
                 android:layout_height="@dimen/pizza_30cm_image_size"
                 android:src="@drawable/pizzasize30cm"
                 android:scaleType="centerCrop"
-                android:background="?attr/selectableItemBackgroundBorderless"
+                android:background="@color/white"
                 android:contentDescription="@string/pizza_30_cm"
                 android:onClick="@{() -> orderViewModel.setSize(30)}"
                 app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +55,7 @@
                 android:layout_marginTop="@dimen/margin_from_top"
                 android:src="@drawable/pizzasize45cm"
                 android:scaleType="centerCrop"
-                android:background="?attr/selectableItemBackgroundBorderless"
+                android:background="@color/white"
                 android:contentDescription="@string/pizza_45_cm"
                 android:onClick="@{() -> orderViewModel.setSize(45)}"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -65,11 +67,12 @@
                 style="?attr/textAppearanceBody1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{orderViewModel.size_text}"
+                android:text="@{@string/your_pizzas_size(orderViewModel.size)}"
                 android:layout_margin="@dimen/margin_between_elements"
                 app:layout_constraintStart_toStartOf="parent" 
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pizza_45cm_button" />
+                app:layout_constraintTop_toBottomOf="@id/pizza_45cm_button"
+                tools:text="@string/your_pizzas_size"/>
             
             <com.google.android.material.button.MaterialButton
                 style="@style/next_button_style"
