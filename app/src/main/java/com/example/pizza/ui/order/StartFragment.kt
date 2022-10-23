@@ -1,7 +1,6 @@
 package com.example.pizza.ui.order
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -40,7 +39,6 @@ class StartFragment : Fragment() {
     fun orderPizza() {
         findNavController().navigate(R.id.action_startFragment_to_flavorFragment)
         sharedOrderViewModel.resetOrder()
-        Log.d("StartFragment", "Navigated successfully")
     }
 
     /**

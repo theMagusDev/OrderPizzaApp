@@ -1,6 +1,5 @@
 package com.example.pizza.ui.order.model
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -16,7 +15,6 @@ class OrderViewModel : ViewModel() {
     val size: LiveData<Int> = _size
 
     fun addOrRemoveFlavor(flavor: String) {
-        Log.d("OrderViewModel", _flavors.value.toString().plus(" <-- _flavors var;").plus(flavor).plus(" <-- flavor var."))
         if(_flavors.value?.contains(flavor) == true) {
             _flavors.value!!.remove(flavor)
         } else {

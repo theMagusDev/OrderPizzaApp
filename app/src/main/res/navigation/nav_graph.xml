@@ -27,5 +27,13 @@
         android:id="@+id/sizeFragment"
         android:name="com.example.pizza.ui.order.SizeFragment"
         android:label="fragment_size"
-        tools:layout="@layout/fragment_size" />
+        tools:layout="@layout/fragment_size" >
+        <action
+            android:id="@+id/action_sizeFragment_to_pickupFragment"
+            app:destination="@id/pickupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pickupFragment"
+        android:name="com.example.pizza.ui.order.PickupFragment"
+        android:label="PickupFragment" />
 </navigation>
