@@ -17,10 +17,20 @@ class PickupFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val fragmentFlavorBinding = FragmentPickupBinding.inflate(inflater, container, false)
         binding = fragmentFlavorBinding
         return fragmentFlavorBinding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding?.apply {
+            lifecycleOwner = viewLifecycleOwner
+
+            orderViewModel = sharedOrderViewModel
+        }
     }
 
     override fun onDestroy() {

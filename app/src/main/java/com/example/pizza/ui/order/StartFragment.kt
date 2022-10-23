@@ -38,7 +38,6 @@ class StartFragment : Fragment() {
 
     fun orderPizza() {
         findNavController().navigate(R.id.action_startFragment_to_flavorFragment)
-        sharedOrderViewModel.resetOrder()
     }
 
     /**

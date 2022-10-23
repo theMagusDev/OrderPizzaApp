@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/startFragment"
         android:name="com.example.pizza.ui.order.StartFragment"
-        android:label="fragment_start"
+        android:label="Pizza Order"
         tools:layout="@layout/fragment_start" >
         <action
             android:id="@+id/action_startFragment_to_flavorFragment"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/flavorFragment"
         android:name="com.example.pizza.ui.order.FlavorFragment"
-        android:label="fragment_flavor"
+        android:label="Flavors"
         tools:layout="@layout/fragment_flavor" >
         <action
             android:id="@+id/action_flavorFragment_to_sizeFragment"
@@ -26,7 +26,7 @@
     <fragment
         android:id="@+id/sizeFragment"
         android:name="com.example.pizza.ui.order.SizeFragment"
-        android:label="fragment_size"
+        android:label="Size"
         tools:layout="@layout/fragment_size" >
         <action
             android:id="@+id/action_sizeFragment_to_pickupFragment"
@@ -35,5 +35,5 @@
     <fragment
         android:id="@+id/pickupFragment"
         android:name="com.example.pizza.ui.order.PickupFragment"
-        android:label="PickupFragment" />
+        android:label="Pickup date" />
 </navigation>
