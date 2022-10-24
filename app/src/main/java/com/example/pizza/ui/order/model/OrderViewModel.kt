@@ -13,6 +13,9 @@ class OrderViewModel : ViewModel() {
     private var _price = MutableLiveData<Double>()
     val price: LiveData<Double> = _price
 
+    private var _quantity = MutableLiveData<Int>()
+    val quantity: LiveData<Int> = _quantity
+
     private var _flavors = MutableLiveData<MutableList<String>>()
     val flavors: LiveData<MutableList<String>> = _flavors
 
@@ -60,6 +63,7 @@ class OrderViewModel : ViewModel() {
 
     private fun resetOrder() {
         _price.value = 0.0
+        _quantity.value = 0
         _flavors.value = mutableListOf<String>()
         _size.value = 0
         _date.value = ""

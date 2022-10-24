@@ -27,7 +27,7 @@
             <!-- Checkboxes -->
 
             <CheckBox
-                style="@style/checkbox_style"
+                style="@style/Widget.Pizza.Checkbox"
                 android:id="@+id/bacon_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
                 app:layout_constraintTop_toTopOf="parent"/>
 
             <CheckBox
-                style="@style/checkbox_style"
+                style="@style/Widget.Pizza.Checkbox"
                 android:id="@+id/extra_cheese_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
                 app:layout_constraintTop_toBottomOf="@id/bacon_checkbox"/>
 
             <CheckBox
-                style="@style/checkbox_style"
+                style="@style/Widget.Pizza.Checkbox"
                 android:id="@+id/mushrooms_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
                 app:layout_constraintTop_toBottomOf="@id/extra_cheese_checkbox"/>
 
             <CheckBox
-                style="@style/checkbox_style"
+                style="@style/Widget.Pizza.Checkbox"
                 android:id="@+id/onions_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
                 app:layout_constraintTop_toBottomOf="@id/mushrooms_checkbox"/>
 
             <CheckBox
-                style="@style/checkbox_style"
+                style="@style/Widget.Pizza.Checkbox"
                 android:id="@+id/sausage_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -86,7 +86,7 @@
                 app:layout_constraintTop_toBottomOf="@id/sausage_checkbox"/>
 
             <TextView
-                style="@style/order_price_text_style"
+                style="@style/Widget.Pizza.Checkbox"
                 android:id="@+id/price_text"
                 android:text="@{@string/price(orderViewModel.price)}"
                 android:layout_width="wrap_content"
@@ -96,7 +96,7 @@
                 tools:text="@string/price"/>
 
             <com.google.android.material.button.MaterialButton
-                style="@style/next_button_style"
+                style="@style/Widget.Pizza.Checkbox"
                 android:onClick="@{() -> flavorFragment.goToNextScreen()}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

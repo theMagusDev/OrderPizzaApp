@@ -5,14 +5,110 @@
     android:layout_height="match_parent"
     tools:context=".SummaryFragment">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:padding="@dimen/side_margin">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""/>
-    </LinearLayout>
+            android:focusable="true"
+            android:orientation="vertical">
+
+
+            <TextView
+                style="@style/Widget.Pizza.TextView.Label"
+                android:id="@+id/quantity_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/quantity"
+                android:textStyle="normal"/>
+
+            <TextView
+                style="@style/Widget.Pizza.TextView.Summary"
+                android:id="@+id/quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="1 pizza"/>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/side_margin"/>
+
+            <TextView
+                style="@style/Widget.Pizza.TextView.Label"
+                android:id="@+id/flavors_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/flavors"
+                android:textStyle="normal"/>
+
+            <TextView
+                style="@style/Widget.Pizza.TextView.Summary"
+                android:id="@+id/flavors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Tomatoes, Cheese, Sausage"/>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/side_margin"/>
+
+            <TextView
+                style="@style/Widget.Pizza.TextView.Label"
+                android:id="@+id/size_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/size"
+                android:textStyle="normal"/>
+
+            <TextView
+                style="@style/Widget.Pizza.TextView.Summary"
+                android:id="@+id/size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="45cm"/>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/side_margin"/>
+
+            <TextView
+                style="@style/Widget.Pizza.TextView.Label"
+                android:id="@+id/pickup_date_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pickup_date"
+                android:textStyle="normal"/>
+
+            <TextView
+                style="@style/Widget.Pizza.TextView.Summary"
+                android:id="@+id/pickup_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Sun Oct 27"/>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/side_margin"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/send_order_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Send order to another app"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </layout>

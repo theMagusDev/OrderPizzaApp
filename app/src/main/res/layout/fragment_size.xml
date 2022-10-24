@@ -63,7 +63,7 @@
                 tools:text="@string/your_pizzas_size"/>
             
             <com.google.android.material.button.MaterialButton
-                style="@style/next_button_style"
+                style="@style/Widget.Pizza.TextView.Price"
                 android:onClick="@{() -> sizeFragment.goToNextScreen()}"
                 app:layout_constraintTop_toBottomOf="@id/your_pizza_size_textview"
                 app:layout_constraintEnd_toEndOf="parent"

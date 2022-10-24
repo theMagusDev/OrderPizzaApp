@@ -28,7 +28,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.radiobutton.MaterialRadioButton
-                style="@style/pickup_radiobutton_style"
+                style="@style/Widget.Pizza.RadioButton"
                 android:id="@+id/first_pickup_option"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
                     tools:text="Sun Oct 23"/>
 
             <com.google.android.material.radiobutton.MaterialRadioButton
-                style="@style/pickup_radiobutton_style"
+                style="@style/Widget.Pizza.RadioButton"
                 android:id="@+id/second_pickup_option"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
                 tools:text="Sun Oct 24"/>
 
             <com.google.android.material.radiobutton.MaterialRadioButton
-                style="@style/pickup_radiobutton_style"
+                style="@style/Widget.Pizza.RadioButton"
                 android:id="@+id/third_pickup_option"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
                 tools:text="Sun Oct 25"/>
 
             <com.google.android.material.radiobutton.MaterialRadioButton
-                style="@style/pickup_radiobutton_style"
+                style="@style/Widget.Pizza.RadioButton"
                 android:id="@+id/fourth_pickup_option"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
                 tools:text="Sun Oct 26"/>
 
             <com.google.android.material.radiobutton.MaterialRadioButton
-                style="@style/pickup_radiobutton_style"
+                style="@style/Widget.Pizza.RadioButton"
                 android:id="@+id/fifth_pickup_option"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -85,7 +85,7 @@
             </RadioGroup>
 
             <com.google.android.material.button.MaterialButton
-                style="@style/next_button_style"
+                style="@style/Widget.Pizza.Button.Next"
                 app:layout_constraintTop_toBottomOf="@id/pickup_options"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />

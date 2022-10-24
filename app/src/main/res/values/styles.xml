@@ -1,26 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="checkbox_style" parent="android:Widget.CompoundButton.CheckBox">
+    <style name="Widget.Pizza.Checkbox" parent="android:Widget.CompoundButton.CheckBox">
         <item name="android:textSize">20sp</item>
         <item name="android:layout_marginTop">@dimen/margin_between_elements</item>
         <item name="android:layout_marginBottom">@dimen/margin_between_elements</item>
     </style>
 
-    <style name="next_button_style" parent="Widget.MaterialComponents.Button">
+    <style name="Widget.Pizza.Button.Next" parent="Widget.MaterialComponents.Button">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:text">@string/next_button_text</item>
         <item name="android:layout_margin">@dimen/margin_between_elements</item>
     </style>
 
-    <style name="order_price_text_style" parent="Widget.AppCompat.TextView">
+    <style name="Widget.Pizza.TextView.Price" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">20sp</item>
         <item name="android:layout_margin">@dimen/side_margin</item>
     </style>
 
-    <style name="pickup_radiobutton_style" parent="Widget.AppCompat.CompoundButton.RadioButton">
+    <style name="Widget.Pizza.RadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
         <item name="android:layout_marginTop">@dimen/margin_between_elements</item>
         <item name="android:layout_marginBottom">@dimen/margin_between_elements</item>
         <item name="android:textSize">20sp</item>
+    </style>
+    
+    <style name="Widget.Pizza.TextView.Label" parent="Widget.AppCompat.TextView">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+    </style>
+    
+    <style name="Widget.Pizza.TextView.Summary" parent="Widget.AppCompat.TextView">
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+        <item name="android:textStyle">bold</item>
     </style>
 </resources>
