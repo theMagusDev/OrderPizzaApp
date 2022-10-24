@@ -32,5 +32,6 @@
     <style name="Widget.Pizza.TextView.Summary" parent="Widget.AppCompat.TextView">
         <item name="android:textAppearance">?attr/textAppearanceBody1</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">@dimen/order_summary_margin</item>
     </style>
 </resources>

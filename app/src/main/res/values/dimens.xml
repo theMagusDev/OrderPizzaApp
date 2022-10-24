@@ -7,4 +7,5 @@
     <dimen name="margin_from_top">24dp</dimen>
     <dimen name="side_margin">16dp</dimen>
     <dimen name="margin_between_elements">8dp</dimen>
+    <dimen name="order_summary_margin">4dp</dimen>
 </resources>
