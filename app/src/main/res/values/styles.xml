@@ -34,4 +34,9 @@
         <item name="android:textStyle">bold</item>
         <item name="android:layout_marginTop">@dimen/order_summary_margin</item>
     </style>
+
+    <style name="Widget.Pizza.MaterialDivider" parent="Widget.MaterialComponents.MaterialDivider">
+        <item name="android:layout_marginTop">@dimen/margin_between_elements</item>
+        <item name="android:layout_marginBottom">@dimen/margin_between_elements</item>
+    </style>
 </resources>

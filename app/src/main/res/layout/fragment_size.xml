@@ -56,16 +56,34 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{@string/your_pizzas_size(orderViewModel.size)}"
-                android:layout_margin="@dimen/margin_between_elements"
+                android:padding="@dimen/margin_between_elements"
                 app:layout_constraintStart_toStartOf="parent" 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/pizza_45cm_button"
                 tools:text="@string/your_pizzas_size"/>
-            
-            <com.google.android.material.button.MaterialButton
+
+            <com.google.android.material.divider.MaterialDivider
+                style="@style/Widget.Pizza.MaterialDivider"
+                android:id="@+id/size_divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/your_pizza_size_textview"/>
+
+            <TextView
                 style="@style/Widget.Pizza.TextView.Price"
+                android:id="@+id/price_text"
+                android:text="@{@string/price(orderViewModel.price)}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/size_divider"
+                tools:text="@string/price"/>
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.Pizza.Button.Next"
                 android:onClick="@{() -> sizeFragment.goToNextScreen()}"
-                app:layout_constraintTop_toBottomOf="@id/your_pizza_size_textview"
+                app:layout_constraintTop_toBottomOf="@id/price_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
 
