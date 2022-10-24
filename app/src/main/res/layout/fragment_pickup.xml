@@ -21,17 +21,19 @@
             android:padding="@dimen/side_margin">
 
             <RadioGroup
+                android:id="@+id/pickup_options"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <com.google.android.material.radiobutton.MaterialRadioButton
+            <com.google.android.material.radiobutton.MaterialRadioButton
                 style="@style/pickup_radiobutton_style"
                 android:id="@+id/first_pickup_option"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{orderViewModel.dateOptions[0]}"
+                android:onClick="@{() -> orderViewModel.setPickupDate(orderViewModel.dateOptions[0])}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                     tools:text="Sun Oct 23"/>
@@ -42,6 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{orderViewModel.dateOptions[1]}"
+                android:onClick="@{() -> orderViewModel.setPickupDate(orderViewModel.dateOptions[1])}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/first_pickup_option"
                 tools:text="Sun Oct 24"/>
@@ -52,6 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{orderViewModel.dateOptions[2]}"
+                android:onClick="@{() -> orderViewModel.setPickupDate(orderViewModel.dateOptions[2])}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/second_pickup_option"
                 tools:text="Sun Oct 25"/>
@@ -62,6 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{orderViewModel.dateOptions[3]}"
+                android:onClick="@{() -> orderViewModel.setPickupDate(orderViewModel.dateOptions[3])}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/third_pickup_option"
                 tools:text="Sun Oct 26"/>
@@ -72,16 +77,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{orderViewModel.dateOptions[4]}"
+                android:onClick="@{() -> orderViewModel.setPickupDate(orderViewModel.dateOptions[4])}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/fourth_pickup_option"
                 tools:text="Sun Oct 27"/>
 
+            </RadioGroup>
+
             <com.google.android.material.button.MaterialButton
                 style="@style/next_button_style"
-                app:layout_constraintTop_toBottomOf="@id/fifth_pickup_option"
+                app:layout_constraintTop_toBottomOf="@id/pickup_options"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
-            </RadioGroup>
+                app:layout_constraintStart_toStartOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

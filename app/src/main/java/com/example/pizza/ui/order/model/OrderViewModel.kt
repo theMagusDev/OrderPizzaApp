@@ -19,6 +19,9 @@ class OrderViewModel : ViewModel() {
     private var _size = MutableLiveData<Int>()
     val size: LiveData<Int> = _size
 
+    private var _date = MutableLiveData<String>()
+    val date: LiveData<String> = _date
+
     val dateOptions = getPickupOptions()
 
     init {
@@ -35,6 +38,10 @@ class OrderViewModel : ViewModel() {
 
     fun setSize(size: Int) {
         _size.value = size
+    }
+
+    fun setPickupDate(date: String) {
+        _date.value = date
     }
 
     private fun getPickupOptions(): List<String> {
@@ -55,5 +62,6 @@ class OrderViewModel : ViewModel() {
         _price.value = 0.0
         _flavors.value = mutableListOf<String>()
         _size.value = 0
+        _date.value = ""
     }
 }
