@@ -20,6 +20,8 @@ class SummaryFragment : Fragment() {
         return summaryFragmentBinding.root
     }
 
+
+
     override fun onDestroy() {
         super.onDestroy()
         binding = null
