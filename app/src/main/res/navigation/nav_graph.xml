@@ -35,5 +35,13 @@
     <fragment
         android:id="@+id/pickupFragment"
         android:name="com.example.pizza.ui.order.PickupFragment"
-        android:label="Pickup date" />
+        android:label="Pickup date" >
+        <action
+            android:id="@+id/action_pickupFragment_to_summaryFragment"
+            app:destination="@id/summaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/summaryFragment"
+        android:name="com.example.pizza.ui.order.SummaryFragment"
+        android:label="SummaryFragment" />
 </navigation>

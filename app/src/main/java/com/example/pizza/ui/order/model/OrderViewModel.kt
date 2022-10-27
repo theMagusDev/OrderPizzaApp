@@ -11,6 +11,9 @@ import java.util.*
 // Additional cost for same day pickup of an order
 private const val PRICE_FOR_SAME_DAY_PICKUP = 3.00
 
+// One cupcake cost
+private const val CUPCAKE_PRICE = 3.00
+
 class OrderViewModel : ViewModel() {
     private var _price = MutableLiveData<Double>()
     val price: LiveData<String> = Transformations.map(_price) {
@@ -63,6 +66,28 @@ class OrderViewModel : ViewModel() {
         }
 
         return options
+    }
+
+    private fun updatePrice() {
+        var calculatedPrice = (_quantity.value ?: 0) * CUPCAKE_PRICE
+
+        // Price update based on flavors selected
+        if(!_flavors.value.isNullOrEmpty()) {
+            for (flavor in _flavors.value!!) {
+                when (flavor) {
+                    "Bacon" -> calculatedPrice += 2.00
+                    "Sausage" -> calculatedPrice += 2.50
+                    "Extra Cheese" -> calculatedPrice += 2.75
+                    "Mushrooms" -> calculatedPrice += 3.00
+                    else -> calculatedPrice += 2.50
+                }
+            }
+        }
+
+        if(date.value == dateOptions[0])
+            calculatedPrice += PRICE_FOR_SAME_DAY_PICKUP
+
+        _price.value = calculatedPrice
     }
 
     private fun resetOrder() {

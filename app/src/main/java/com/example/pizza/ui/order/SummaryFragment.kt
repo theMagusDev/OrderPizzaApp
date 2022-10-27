@@ -5,10 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.example.pizza.databinding.FragmentSummaryBinding
+import com.example.pizza.ui.order.model.OrderViewModel
 
 class SummaryFragment : Fragment() {
     private var binding: FragmentSummaryBinding? = null
+    private val sharedOrderViewModel: OrderViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,7 +23,14 @@ class SummaryFragment : Fragment() {
         return summaryFragmentBinding.root
     }
 
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding?.apply {
+            lifecycleOwner = viewLifecycleOwner
+            orderViewModel = sharedOrderViewModel
+            summaryFragment = this@SummaryFragment
+        }
+    }
 
     override fun onDestroy() {
         super.onDestroy()

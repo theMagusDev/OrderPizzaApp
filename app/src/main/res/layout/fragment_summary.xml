@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".SummaryFragment">
 
+    <data>
+        <variable
+            name="orderViewModel"
+            type="com.example.pizza.ui.order.model.OrderViewModel" />
+
+        <variable
+            name="summaryFragment"
+            type="com.example.pizza.ui.order.SummaryFragment" />
+    </data>
+    
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -30,6 +38,7 @@
                 android:id="@+id/quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@{@string/summary_pizza(orderViewModel.quantity)}"
                 tools:text="1 pizza"/>
 
             <com.google.android.material.divider.MaterialDivider
@@ -51,6 +60,7 @@
                 android:id="@+id/flavors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@{orderViewModel.flavors.toString()}"
                 tools:text="Tomatoes, Cheese, Sausage"/>
 
             <com.google.android.material.divider.MaterialDivider

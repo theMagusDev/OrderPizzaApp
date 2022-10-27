@@ -9,6 +9,10 @@
         <variable
             name="orderViewModel"
             type="com.example.pizza.ui.order.model.OrderViewModel" />
+
+        <variable
+            name="pickupFragment"
+            type="com.example.pizza.ui.order.PickupFragment" />
     </data>
     
     <ScrollView
@@ -104,6 +108,7 @@
 
             <com.google.android.material.button.MaterialButton
                 style="@style/Widget.Pizza.Button.Next"
+                android:onClick=""
                 app:layout_constraintTop_toBottomOf="@id/price_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
