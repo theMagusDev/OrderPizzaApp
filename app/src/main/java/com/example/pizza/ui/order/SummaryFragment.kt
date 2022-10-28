@@ -27,14 +27,17 @@ class SummaryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        flavors = sharedOrderViewModel.flavors.value!!.joinToString(", ")
-        Log.d("SummaryFragment", flavors)
+
         binding?.apply {
             lifecycleOwner = viewLifecycleOwner
             orderViewModel = sharedOrderViewModel
             summaryFragment = this@SummaryFragment
         }
 
+        if (sharedOrderViewModel.flavors.value?.size != 0)
+            flavors = sharedOrderViewModel.flavors.value!!.joinToString(", ")
+        else
+            flavors = "No"
     }
 
     fun getFlavors() : String {

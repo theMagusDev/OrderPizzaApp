@@ -1,6 +1,7 @@
 package com.example.pizza.ui.order
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,6 +38,12 @@ class SizeFragment : Fragment() {
 
             orderViewModel = sharedOrderViewModel
         }
+    }
+
+    fun updateSize(size: Int) {
+        sharedOrderViewModel.setSize(size)
+        binding?.pizza30cmRadioButton?.isChecked = sharedOrderViewModel.size.value!! == 30
+        binding?.pizza45cmRadioButton?.isChecked = sharedOrderViewModel.size.value!! == 45
     }
 
     fun goToNextScreen() {

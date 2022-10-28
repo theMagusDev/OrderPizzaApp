@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/side_margin">
-            
+
             <ImageButton
                 android:id="@+id/pizza_30cm_button"
                 android:layout_width="@dimen/pizza_30cm_image_size"
@@ -30,7 +30,7 @@
                 android:scaleType="centerCrop"
                 android:background="@color/white"
                 android:contentDescription="@string/pizza_30_cm"
-                android:onClick="@{() -> orderViewModel.setSize(30)}"
+                android:onClick="@{() -> sizeFragment.updateSize(30)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/pizza_45cm_button"
                 app:layout_constraintTop_toTopOf="@id/pizza_45cm_button"
@@ -44,23 +44,33 @@
                 android:src="@drawable/pizzasize45cm"
                 android:scaleType="centerCrop"
                 android:background="@color/white"
+                android:onClick="@{() -> sizeFragment.updateSize(45)}"
                 android:contentDescription="@string/pizza_45_cm"
-                android:onClick="@{() -> orderViewModel.setSize(45)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/pizza_30cm_button"
                 app:layout_constraintTop_toTopOf="parent" />
-            
-            <TextView
-                android:id="@+id/your_pizza_size_textview"
-                style="?attr/textAppearanceBody1"
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                style="@style/Widget.Pizza.RadioButton.Size"
+                android:id="@+id/pizza_30cm_radio_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{@string/your_pizzas_size(orderViewModel.size)}"
-                android:padding="@dimen/margin_between_elements"
-                app:layout_constraintStart_toStartOf="parent" 
-                app:layout_constraintEnd_toEndOf="parent"
+                android:text="30cm"
+                android:onClick="@{() -> sizeFragment.updateSize(30)}"
+                app:layout_constraintTop_toTopOf="@id/pizza_45cm_radio_button"
+                app:layout_constraintStart_toStartOf="@id/pizza_30cm_button"
+                app:layout_constraintEnd_toEndOf="@id/pizza_30cm_button"/>
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                style="@style/Widget.Pizza.RadioButton.Size"
+                android:id="@+id/pizza_45cm_radio_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="45cm"
+                android:onClick="@{() -> sizeFragment.updateSize(45)}"
                 app:layout_constraintTop_toBottomOf="@id/pizza_45cm_button"
-                tools:text="@string/your_pizzas_size"/>
+                app:layout_constraintStart_toStartOf="@id/pizza_45cm_button"
+                app:layout_constraintEnd_toEndOf="@id/pizza_45cm_button"/>
 
             <com.google.android.material.divider.MaterialDivider
                 style="@style/Widget.Pizza.MaterialDivider"
@@ -68,7 +78,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/your_pizza_size_textview"/>
+                app:layout_constraintTop_toBottomOf="@id/pizza_45cm_radio_button"/>
 
             <TextView
                 style="@style/Widget.Pizza.TextView.Price"
