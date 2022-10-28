@@ -48,6 +48,8 @@ class SizeFragment : Fragment() {
 
     fun goToNextScreen() {
         findNavController().navigate(R.id.action_sizeFragment_to_pickupFragment)
+        // Select default pickup date
+        sharedOrderViewModel.setPickupDate(sharedOrderViewModel.dateOptions[0])
     }
 
     /**

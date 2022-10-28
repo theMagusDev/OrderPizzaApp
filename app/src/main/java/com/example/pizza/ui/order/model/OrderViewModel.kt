@@ -1,5 +1,6 @@
 package com.example.pizza.ui.order.model
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
@@ -34,6 +35,7 @@ class OrderViewModel : ViewModel() {
 
     val dateOptions = getPickupOptions()
 
+
     init {
         resetOrder()
     }
@@ -49,6 +51,7 @@ class OrderViewModel : ViewModel() {
 
     fun addQuantity(amount: Int) {
         _quantity.value = _quantity.value?.plus(amount)
+        updatePrice()
     }
 
     fun setSize(size: Int) {
@@ -81,7 +84,8 @@ class OrderViewModel : ViewModel() {
         // Price update based on size selected
         calculatedPrice += when(_size.value) {
             45 -> 2.50
-            else -> 2.00
+            30 -> 2.00
+            else -> 0.0
         }
 
         // Price update based on flavors selected
@@ -92,7 +96,7 @@ class OrderViewModel : ViewModel() {
                     "Sausage" -> calculatedPrice += 2.50
                     "Extra Cheese" -> calculatedPrice += 2.75
                     "Mushrooms" -> calculatedPrice += 3.00
-                    "Onion" -> calculatedPrice += 2.50
+                    "Onions" -> calculatedPrice += 2.50
                     else -> {}
                 }
             }
