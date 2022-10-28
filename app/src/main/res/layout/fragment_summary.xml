@@ -60,7 +60,7 @@
                 android:id="@+id/flavors"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{orderViewModel.flavors.toString()}"
+                android:text="@{summaryFragment.flavors}"
                 tools:text="Tomatoes, Cheese, Sausage"/>
 
             <com.google.android.material.divider.MaterialDivider
@@ -82,6 +82,7 @@
                 android:id="@+id/size"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@{@string/pizza_cm(orderViewModel.size)}"
                 tools:text="45cm"/>
 
             <com.google.android.material.divider.MaterialDivider
@@ -103,6 +104,7 @@
                 android:id="@+id/pickup_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@{orderViewModel.date}"
                 tools:text="Sun Oct 27"/>
 
             <com.google.android.material.divider.MaterialDivider
@@ -115,7 +117,7 @@
                 android:id="@+id/send_order_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Send order to another app"/>
+                android:text="@string/send_order_to_another_app"/>
 
         </LinearLayout>
 

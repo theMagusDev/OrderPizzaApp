@@ -108,7 +108,7 @@
 
             <com.google.android.material.button.MaterialButton
                 style="@style/Widget.Pizza.Button.Next"
-                android:onClick=""
+                android:onClick="@{() -> pickupFragment.goToNextScreen()}"
                 app:layout_constraintTop_toBottomOf="@id/price_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />

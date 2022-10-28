@@ -44,14 +44,21 @@ class OrderViewModel : ViewModel() {
         } else {
             _flavors.value!!.add(flavor)
         }
+        updatePrice()
+    }
+
+    fun addQuantity(amount: Int) {
+        _quantity.value = _quantity.value?.plus(amount)
     }
 
     fun setSize(size: Int) {
         _size.value = size
+        updatePrice()
     }
 
     fun setPickupDate(date: String) {
         _date.value = date
+        updatePrice()
     }
 
     private fun getPickupOptions(): List<String> {
@@ -71,6 +78,12 @@ class OrderViewModel : ViewModel() {
     private fun updatePrice() {
         var calculatedPrice = (_quantity.value ?: 0) * CUPCAKE_PRICE
 
+        // Price update based on size selected
+        calculatedPrice += when(_size.value) {
+            45 -> 2.50
+            else -> 2.00
+        }
+
         // Price update based on flavors selected
         if(!_flavors.value.isNullOrEmpty()) {
             for (flavor in _flavors.value!!) {
@@ -79,7 +92,8 @@ class OrderViewModel : ViewModel() {
                     "Sausage" -> calculatedPrice += 2.50
                     "Extra Cheese" -> calculatedPrice += 2.75
                     "Mushrooms" -> calculatedPrice += 3.00
-                    else -> calculatedPrice += 2.50
+                    "Onion" -> calculatedPrice += 2.50
+                    else -> {}
                 }
             }
         }
