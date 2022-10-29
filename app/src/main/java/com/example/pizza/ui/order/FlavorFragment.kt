@@ -11,8 +11,6 @@ import com.example.pizza.R
 import com.example.pizza.databinding.FragmentFlavorBinding
 import com.example.pizza.ui.order.model.OrderViewModel
 
-private const val DEFAULT_PIZZA_SIZE = 35
-
 class FlavorFragment : Fragment() {
     /* Binding object instance corresponding to the fragment_start.xml layout
     * This property is non-null between the onCreateView() and onDestroyView() lifecycle callbacks,
@@ -25,7 +23,7 @@ class FlavorFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val fragmentFlavorBinding = FragmentFlavorBinding.inflate(inflater, container, false)
         binding = fragmentFlavorBinding
         return fragmentFlavorBinding.root
@@ -46,8 +44,11 @@ class FlavorFragment : Fragment() {
     }
 
     fun goToNextScreen () {
-        findNavController().navigate(R.id.action_flavorFragment_to_sizeFragment)
-        sharedOrderViewModel.setSize(DEFAULT_PIZZA_SIZE)
+        findNavController().navigate(R.id.action_flavorFragment_to_pickupFragment)
+
+        // Select default pickup date
+        if (sharedOrderViewModel.hasNoPickupDateSelected())
+            sharedOrderViewModel.setPickupDate(sharedOrderViewModel.dateOptions[0])
     }
 
     /**

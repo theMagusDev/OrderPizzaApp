@@ -1,6 +1,5 @@
 package com.example.pizza.ui.order.model
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
@@ -12,8 +11,8 @@ import java.util.*
 // Additional cost for same day pickup of an order
 private const val PRICE_FOR_SAME_DAY_PICKUP = 3.00
 
-// One cupcake cost
-private const val CUPCAKE_PRICE = 3.00
+// One pizza cost
+private const val PIZZA_PRICE = 5.00
 
 class OrderViewModel : ViewModel() {
     private var _price = MutableLiveData<Double>()
@@ -79,12 +78,12 @@ class OrderViewModel : ViewModel() {
     }
 
     private fun updatePrice() {
-        var calculatedPrice = (_quantity.value ?: 0) * CUPCAKE_PRICE
+        var calculatedPrice = (_quantity.value ?: 0) * PIZZA_PRICE
 
         // Price update based on size selected
-        calculatedPrice += when(_size.value) {
-            45 -> 2.50
-            30 -> 2.00
+        calculatedPrice *= when(_size.value) {
+            45 -> 1.80
+            30 -> 1.10
             else -> 0.0
         }
 
@@ -106,6 +105,10 @@ class OrderViewModel : ViewModel() {
             calculatedPrice += PRICE_FOR_SAME_DAY_PICKUP
 
         _price.value = calculatedPrice
+    }
+
+    fun hasNoPickupDateSelected(): Boolean {
+        return _date.value.isNullOrEmpty()
     }
 
     private fun resetOrder() {

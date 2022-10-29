@@ -12,6 +12,8 @@ import com.example.pizza.R
 import com.example.pizza.databinding.FragmentStartBinding
 import com.example.pizza.ui.order.model.OrderViewModel
 
+private const val DEFAULT_PIZZA_SIZE = 35
+
 class StartFragment : Fragment() {
 
     // Binding object instance corresponding to the fragment_start.xml layout
@@ -24,7 +26,7 @@ class StartFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val fragmentStartBinding = FragmentStartBinding.inflate(inflater, container, false)
         binding = fragmentStartBinding
         return fragmentStartBinding.root
@@ -38,7 +40,8 @@ class StartFragment : Fragment() {
     }
 
     fun orderPizza() {
-        findNavController().navigate(R.id.action_startFragment_to_flavorFragment)
+        findNavController().navigate(R.id.action_startFragment_to_sizeFragment)
+        sharedOrderViewModel.setSize(DEFAULT_PIZZA_SIZE)
         sharedOrderViewModel.addQuantity(1)
     }
 
