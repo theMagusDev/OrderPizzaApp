@@ -113,10 +113,20 @@
                 android:layout_marginTop="@dimen/side_margin"
                 android:layout_marginBottom="@dimen/side_margin"/>
 
+            <TextView
+                style="@style/Widget.Pizza.TextView.Summary.Total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements"
+                android:text="@{@string/total(orderViewModel.price)}"
+                android:layout_gravity="end"
+                tools:text="Total: $12.00"/>
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/send_order_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements"
                 android:text="@string/send_order_to_another_app"/>
 
         </LinearLayout>
