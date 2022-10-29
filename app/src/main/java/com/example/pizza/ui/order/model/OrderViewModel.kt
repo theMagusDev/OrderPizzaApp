@@ -8,11 +8,14 @@ import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
+// One pizza cost
+private const val PIZZA_PRICE = 2.00
+
 // Additional cost for same day pickup of an order
 private const val PRICE_FOR_SAME_DAY_PICKUP = 3.00
 
-// One pizza cost
-private const val PIZZA_PRICE = 5.00
+// Delivery cost
+private const val DELIVERY_PRICE = 3.00
 
 class OrderViewModel : ViewModel() {
     private var _price = MutableLiveData<Double>()
@@ -80,13 +83,6 @@ class OrderViewModel : ViewModel() {
     private fun updatePrice() {
         var calculatedPrice = (_quantity.value ?: 0) * PIZZA_PRICE
 
-        // Price update based on size selected
-        calculatedPrice *= when(_size.value) {
-            45 -> 1.80
-            30 -> 1.10
-            else -> 0.0
-        }
-
         // Price update based on flavors selected
         if(!_flavors.value.isNullOrEmpty()) {
             for (flavor in _flavors.value!!) {
@@ -101,9 +97,17 @@ class OrderViewModel : ViewModel() {
             }
         }
 
-        if(date.value == dateOptions[0])
-            calculatedPrice += PRICE_FOR_SAME_DAY_PICKUP
+        // Price update based on size selected
+        calculatedPrice *= when(_size.value) {
+            45 -> 1.80
+            30 -> 1.10
+            else -> 1.0
+        }
 
+        // Update the price if same day pickup selected
+        if (date.value == dateOptions[0])
+            calculatedPrice += PRICE_FOR_SAME_DAY_PICKUP
+        
         _price.value = calculatedPrice
     }
 

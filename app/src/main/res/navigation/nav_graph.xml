@@ -11,8 +11,8 @@
         android:label="Pizza Order"
         tools:layout="@layout/fragment_start" >
         <action
-            android:id="@+id/action_startFragment_to_sizeFragment"
-            app:destination="@id/sizeFragment" />
+            android:id="@+id/action_startFragment_to_flavorFragment"
+            app:destination="@id/flavorFragment" />
     </fragment>
     <fragment
         android:id="@+id/flavorFragment"
@@ -20,8 +20,8 @@
         android:label="Flavors"
         tools:layout="@layout/fragment_flavor" >
         <action
-            android:id="@+id/action_flavorFragment_to_pickupFragment"
-            app:destination="@id/pickupFragment" />
+            android:id="@+id/action_flavorFragment_to_sizeFragment"
+            app:destination="@id/sizeFragment" />
     </fragment>
     <fragment
         android:id="@+id/sizeFragment"
@@ -29,8 +29,8 @@
         android:label="Size"
         tools:layout="@layout/fragment_size" >
         <action
-            android:id="@+id/action_sizeFragment_to_flavorFragment"
-            app:destination="@id/flavorFragment" />
+            android:id="@+id/action_sizeFragment_to_pickupFragment"
+            app:destination="@id/pickupFragment" />
     </fragment>
     <fragment
         android:id="@+id/pickupFragment"

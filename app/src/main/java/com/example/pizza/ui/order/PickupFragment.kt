@@ -35,8 +35,6 @@ class PickupFragment : Fragment() {
 
             pickupFragment = this@PickupFragment
         }
-
-        sharedOrderViewModel.addQuantity(1)
     }
 
     fun goToNextScreen() {
