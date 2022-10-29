@@ -11,7 +11,7 @@ import com.example.pizza.R
 import com.example.pizza.databinding.FragmentFlavorBinding
 import com.example.pizza.ui.order.model.OrderViewModel
 
-private const val DEFAULT_PIZZA_SIZE = 35
+private const val DEFAULT_PIZZA_SIZE = 30
 
 class FlavorFragment : Fragment() {
     /* Binding object instance corresponding to the fragment_start.xml layout
