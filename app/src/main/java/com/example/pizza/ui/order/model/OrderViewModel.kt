@@ -18,8 +18,8 @@ private const val PRICE_FOR_SAME_DAY_PICKUP = 3.00
 private const val DELIVERY_PRICE = 3.00
 
 class OrderViewModel : ViewModel() {
-    private var _price = MutableLiveData<Double>()
-    val price: LiveData<String> = Transformations.map(_price) {
+    private var _total = MutableLiveData<Double>()
+    val total: LiveData<String> = Transformations.map(_total) {
         NumberFormat.getCurrencyInstance().format(it)
     }
 
@@ -47,22 +47,22 @@ class OrderViewModel : ViewModel() {
         } else {
             _flavors.value!!.add(flavor)
         }
-        updatePrice()
+        updateTotal()
     }
 
     fun addQuantity(amount: Int) {
         _quantity.value = _quantity.value?.plus(amount)
-        updatePrice()
+        updateTotal()
     }
 
     fun setSize(size: Int) {
         _size.value = size
-        updatePrice()
+        updateTotal()
     }
 
     fun setPickupDate(date: String) {
         _date.value = date
-        updatePrice()
+        updateTotal()
     }
 
     fun getFlavorsString(): String {
@@ -86,25 +86,25 @@ class OrderViewModel : ViewModel() {
         return options
     }
 
-    private fun updatePrice() {
-        var calculatedPrice = (_quantity.value ?: 0) * PIZZA_PRICE
+    private fun updateTotal() {
+        var calculatedTotal = (_quantity.value ?: 0) * PIZZA_PRICE
 
         // Price update based on flavors selected
         if(!_flavors.value.isNullOrEmpty()) {
             for (flavor in _flavors.value!!) {
                 when (flavor) {
-                    "Bacon" -> calculatedPrice += 2.00
-                    "Sausage" -> calculatedPrice += 2.50
-                    "Extra Cheese" -> calculatedPrice += 2.75
-                    "Mushrooms" -> calculatedPrice += 3.00
-                    "Onions" -> calculatedPrice += 2.50
+                    "Bacon" -> calculatedTotal += 2.00
+                    "Sausage" -> calculatedTotal += 2.50
+                    "Extra Cheese" -> calculatedTotal += 2.75
+                    "Mushrooms" -> calculatedTotal += 3.00
+                    "Onions" -> calculatedTotal += 2.50
                     else -> {}
                 }
             }
         }
 
         // Price update based on size selected
-        calculatedPrice *= when(_size.value) {
+        calculatedTotal *= when(_size.value) {
             45 -> 1.80
             30 -> 1.10
             else -> 1.0
@@ -112,9 +112,9 @@ class OrderViewModel : ViewModel() {
 
         // Update the price if same day pickup selected
         if (date.value == dateOptions[0])
-            calculatedPrice += PRICE_FOR_SAME_DAY_PICKUP
+            calculatedTotal += PRICE_FOR_SAME_DAY_PICKUP
         
-        _price.value = calculatedPrice
+        _total.value = calculatedTotal
     }
 
     fun hasNoPickupDateSelected(): Boolean {
@@ -122,7 +122,7 @@ class OrderViewModel : ViewModel() {
     }
 
     fun resetOrder() {
-        _price.value = 0.0
+        _total.value = 0.0
         _quantity.value = 0
         _flavors.value = mutableListOf<String>()
         _size.value = 0

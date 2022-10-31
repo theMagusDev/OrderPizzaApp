@@ -12,7 +12,7 @@
     <string name="pizza_30_cm">30 centimeter pizza</string>
     <string name="choose_toppings">Choose toppings:</string>
     <string name="main_headline">Main:</string>
-    <string name="price">Price: %s</string>
+    <string name="subtotal">Subtotal: %s</string>
     <string name="sausage">Sausage</string>
     <string name="bacon">Bacon</string>
     <string name="extra_cheese">Extra Cheese</string>

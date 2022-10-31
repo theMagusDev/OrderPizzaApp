@@ -79,7 +79,7 @@ class SummaryFragment : Fragment() {
             sharedOrderViewModel.getFlavorsString(),
             sharedOrderViewModel.size.value.toString(),
             sharedOrderViewModel.date.value,
-            sharedOrderViewModel.price.value
+            sharedOrderViewModel.total.value
         )
 
         val intent = Intent(Intent.ACTION_SENDTO).apply {

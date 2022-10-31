@@ -13,7 +13,7 @@
         <item name="android:layout_margin">@dimen/margin_between_elements</item>
     </style>
 
-    <style name="Widget.Pizza.TextView.Price" parent="Widget.AppCompat.TextView">
+    <style name="Widget.Pizza.TextView.Subtotal" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">20sp</item>
         <item name="android:layout_margin">@dimen/side_margin</item>
     </style>

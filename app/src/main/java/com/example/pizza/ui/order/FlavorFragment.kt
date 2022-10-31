@@ -12,13 +12,8 @@ import com.example.pizza.R
 import com.example.pizza.databinding.FragmentFlavorBinding
 import com.example.pizza.ui.order.model.OrderViewModel
 
-private const val DEFAULT_PIZZA_SIZE = 30
-
 class FlavorFragment : Fragment() {
-    /* Binding object instance corresponding to the fragment_start.xml layout
-    * This property is non-null between the onCreateView() and onDestroyView() lifecycle callbacks,
-    * when the view hierarchy is attached to the fragment.
-    */
+    private val DEFAULT_PIZZA_SIZE = 30
     private var binding: FragmentFlavorBinding? = null
     private val sharedOrderViewModel: OrderViewModel by activityViewModels()
 

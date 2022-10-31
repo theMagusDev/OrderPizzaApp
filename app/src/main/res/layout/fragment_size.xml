@@ -83,19 +83,19 @@
                 app:layout_constraintTop_toBottomOf="@id/pizza_45cm_radio_button"/>
 
             <TextView
-                style="@style/Widget.Pizza.TextView.Price"
-                android:id="@+id/price_text"
-                android:text="@{@string/price(orderViewModel.price.toString())}"
+                style="@style/Widget.Pizza.TextView.Subtotal"
+                android:id="@+id/subtotal_text"
+                android:text="@{@string/subtotal(orderViewModel.total.toString())}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/size_divider"
-                tools:text="@string/price"/>
+                tools:text="@string/subtotal"/>
 
             <com.google.android.material.button.MaterialButton
                 style="@style/Widget.Pizza.Button.Next"
                 android:onClick="@{() -> sizeFragment.goToNextScreen()}"
-                app:layout_constraintTop_toBottomOf="@id/price_text"
+                app:layout_constraintTop_toBottomOf="@id/subtotal_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
 

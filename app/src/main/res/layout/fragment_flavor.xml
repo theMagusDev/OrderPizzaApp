@@ -86,21 +86,21 @@
                 app:layout_constraintTop_toBottomOf="@id/sausage_checkbox"/>
 
             <TextView
-                style="@style/Widget.Pizza.TextView.Price"
-                android:id="@+id/price_text"
-                android:text="@{@string/price(orderViewModel.price)}"
+                style="@style/Widget.Pizza.TextView.Subtotal"
+                android:id="@+id/subtotal_text"
+                android:text="@{@string/subtotal(orderViewModel.total)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/flavors_divider"
-                tools:text="@string/price"/>
+                tools:text="@string/total"/>
 
             <com.google.android.material.button.MaterialButton
                 style="@style/Widget.Pizza.Button.Next"
                 android:onClick="@{() -> flavorFragment.goToNextScreen()}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/price_text"
+                app:layout_constraintTop_toBottomOf="@id/subtotal_text"
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
