@@ -121,7 +121,7 @@ class OrderViewModel : ViewModel() {
         return _date.value.isNullOrEmpty()
     }
 
-    private fun resetOrder() {
+    fun resetOrder() {
         _price.value = 0.0
         _quantity.value = 0
         _flavors.value = mutableListOf<String>()

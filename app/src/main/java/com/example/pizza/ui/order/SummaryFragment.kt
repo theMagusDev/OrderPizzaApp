@@ -5,11 +5,13 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Lifecycle
+import androidx.navigation.fragment.findNavController
 import com.example.pizza.R
 import com.example.pizza.databinding.FragmentSummaryBinding
 import com.example.pizza.ui.order.model.OrderViewModel
@@ -37,6 +39,35 @@ class SummaryFragment : Fragment() {
             orderViewModel = sharedOrderViewModel
             summaryFragment = this@SummaryFragment
         }
+
+        val menuHost: MenuHost = requireActivity()
+
+        // Add menu items without using the Fragment Menu APIs
+        // Note how we can tie the MenuProvider to the viewLifecycleOwner
+        // and an optional Lifecycle.State (here, RESUMED) to indicate when
+        // the menu should be visible
+        menuHost.addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                // Menu items here
+                menuInflater.inflate(R.menu.layout_menu, menu)
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                // Handle the menu selection
+                return when (menuItem.itemId) {
+                    R.id.action_cancel_order -> {
+                        cancelOrder()
+                        true
+                    }
+                    else -> {
+                        // Otherwise, do nothing.
+                        // Add other buttons behaviour here if have them.
+                        true
+                    }
+                }
+
+            }
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
     fun sendOrder() {
@@ -59,6 +90,11 @@ class SummaryFragment : Fragment() {
 
         if(intent.resolveActivity(activity?.packageManager!!) != null)
             startActivity(intent)
+    }
+
+    fun cancelOrder() {
+        findNavController().navigate(R.id.action_summaryFragment_to_startFragment)
+        sharedOrderViewModel.resetOrder()
     }
 
     override fun onDestroy() {

@@ -34,6 +34,7 @@
         Total: %5$s \n\n
         Thank you!
     </string>
+    <string name="cancel_order">Cancel order</string>
     <plurals name="pizzas">
         <item quantity="one">%s pizza</item>
         <item quantity="other">%s pizzas</item>
