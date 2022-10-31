@@ -37,7 +37,6 @@ class OrderViewModel : ViewModel() {
 
     val dateOptions = getPickupOptions()
 
-
     init {
         resetOrder()
     }
@@ -64,6 +63,13 @@ class OrderViewModel : ViewModel() {
     fun setPickupDate(date: String) {
         _date.value = date
         updatePrice()
+    }
+
+    fun getFlavorsString(): String {
+        if (!_flavors.value.isNullOrEmpty())
+            return _flavors.value!!.joinToString(", ")
+        else
+            return "No"
     }
 
     private fun getPickupOptions(): List<String> {

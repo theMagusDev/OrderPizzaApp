@@ -1,5 +1,8 @@
 package com.example.pizza.ui.order
 
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -7,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.example.pizza.R
 import com.example.pizza.databinding.FragmentSummaryBinding
 import com.example.pizza.ui.order.model.OrderViewModel
 
@@ -33,15 +37,28 @@ class SummaryFragment : Fragment() {
             orderViewModel = sharedOrderViewModel
             summaryFragment = this@SummaryFragment
         }
-
-        if (sharedOrderViewModel.flavors.value?.size != 0)
-            flavors = sharedOrderViewModel.flavors.value!!.joinToString(", ")
-        else
-            flavors = "No"
     }
 
-    fun getFlavors() : String {
-        return flavors
+    fun sendOrder() {
+        val numberOfPizzas = sharedOrderViewModel.quantity.value ?: 0
+
+        val orderDetails = getString(
+            R.string.order_details,
+            resources.getQuantityString(R.plurals.pizzas, numberOfPizzas, numberOfPizzas),
+            sharedOrderViewModel.getFlavorsString(),
+            sharedOrderViewModel.size.value.toString(),
+            sharedOrderViewModel.date.value,
+            sharedOrderViewModel.price.value
+        )
+
+        val intent = Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse("mailto:")
+            putExtra(Intent.EXTRA_SUBJECT, getString(R.string.order_email_subject))
+            putExtra(Intent.EXTRA_TEXT, getString(R.string.order_details))
+        }
+
+        if(intent.resolveActivity(activity?.packageManager!!) != null)
+            startActivity(intent)
     }
 
     override fun onDestroy() {

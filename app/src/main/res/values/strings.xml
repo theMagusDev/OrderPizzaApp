@@ -25,4 +25,17 @@
     <string name="summary_pizza">%d pizza</string>
     <string name="total">Total: %s</string>
     <string name="send_order_to_another_app">Send order to another app</string>
+    <string name="order_email_subject">New Pizza order</string>
+    <string name="order_details">
+        Quantity: %1$s \n
+        Flavors: %2$s \n
+        Size: %3$s \n
+        Pickup date: %4$s \n
+        Total: %5$s \n\n
+        Thank you!
+    </string>
+    <plurals name="pizzas">
+        <item quantity="one">%s pizza</item>
+        <item quantity="other">%s pizzas</item>
+    </plurals>
 </resources>
