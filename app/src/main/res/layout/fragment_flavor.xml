@@ -32,6 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/bacon"
+                android:checked="@{orderViewModel.flavors.contains(@string/bacon)}"
                 android:onClick="@{() -> orderViewModel.addOrRemoveFlavor(@string/bacon)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
@@ -42,6 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/extra_cheese"
+                android:checked="@{orderViewModel.flavors.contains(@string/extra_cheese)}"
                 android:onClick="@{() -> orderViewModel.addOrRemoveFlavor(@string/extra_cheese)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/bacon_checkbox"/>
@@ -52,6 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/mushrooms"
+                android:checked="@{orderViewModel.flavors.contains(@string/mushrooms)}"
                 android:onClick="@{() -> orderViewModel.addOrRemoveFlavor(@string/mushrooms)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/extra_cheese_checkbox"/>
@@ -62,6 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/onions"
+                android:checked="@{orderViewModel.flavors.contains(@string/onions)}"
                 android:onClick="@{() -> orderViewModel.addOrRemoveFlavor(@string/onions)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/mushrooms_checkbox"/>
@@ -72,6 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sausage"
+                android:checked="@{orderViewModel.flavors.contains(@string/sausage)}"
                 android:onClick="@{() -> orderViewModel.addOrRemoveFlavor(@string/sausage)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/onions_checkbox"/>

@@ -55,6 +55,11 @@ class OrderViewModel : ViewModel() {
         updateTotal()
     }
 
+    fun setQuantity(quantity: Int) {
+        _quantity.value = quantity
+        updateTotal()
+    }
+
     fun setSize(size: Int) {
         _size.value = size
         updateTotal()

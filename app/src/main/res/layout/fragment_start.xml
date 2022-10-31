@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/create_an_order"
                 android:layout_gravity="center_horizontal"
-                android:onClick="@{() -> startFragment.orderPizza()}"/>
+                android:onClick="@{() -> startFragment.orderPizza(1)}"/>
 
         </LinearLayout>
     </ScrollView>

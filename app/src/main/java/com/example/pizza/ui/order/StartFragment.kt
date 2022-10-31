@@ -37,9 +37,9 @@ class StartFragment : Fragment() {
         }
     }
 
-    fun orderPizza() {
+    fun orderPizza(quantity: Int) {
         findNavController().navigate(R.id.action_startFragment_to_flavorFragment)
-        sharedOrderViewModel.addQuantity(1)
+        sharedOrderViewModel.setQuantity(quantity)
     }
 
     /**

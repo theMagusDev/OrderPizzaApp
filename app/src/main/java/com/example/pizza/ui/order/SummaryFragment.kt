@@ -19,7 +19,6 @@ import com.example.pizza.ui.order.model.OrderViewModel
 class SummaryFragment : Fragment() {
     private var binding: FragmentSummaryBinding? = null
     private val sharedOrderViewModel: OrderViewModel by activityViewModels()
-    private lateinit var flavors: String
 
     override fun onCreateView(
         inflater: LayoutInflater,
