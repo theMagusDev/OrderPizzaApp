@@ -127,7 +127,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_between_elements"
-                android:text="@string/send_order_to_another_app"/>
+                android:text="@string/send_order_to_another_app"
+                android:onClick="@{() -> summaryFragment.sendOrder()}"/>
 
         </LinearLayout>
 
