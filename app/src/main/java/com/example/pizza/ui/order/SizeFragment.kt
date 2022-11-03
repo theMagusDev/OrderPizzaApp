@@ -60,8 +60,8 @@ class SizeFragment : Fragment() {
                         true
                     }
                     else -> {
-                        // Otherwise, do nothing.
-                        // Add other buttons behaviour here if have them.
+                        // Back button pressed
+                        activity?.onBackPressedDispatcher?.onBackPressed()
                         true
                     }
                 }

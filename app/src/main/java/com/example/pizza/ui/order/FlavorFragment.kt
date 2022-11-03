@@ -1,6 +1,7 @@
 package com.example.pizza.ui.order
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
@@ -11,9 +12,9 @@ import androidx.navigation.fragment.findNavController
 import com.example.pizza.R
 import com.example.pizza.databinding.FragmentFlavorBinding
 import com.example.pizza.ui.order.model.OrderViewModel
+import androidx.core.app.NavUtils
 
 class FlavorFragment : Fragment() {
-    private val DEFAULT_PIZZA_SIZE = 30
     private var binding: FragmentFlavorBinding? = null
     private val sharedOrderViewModel: OrderViewModel by activityViewModels()
 
@@ -61,8 +62,8 @@ class FlavorFragment : Fragment() {
                         true
                     }
                     else -> {
-                        // Otherwise, do nothing.
-                        // Add other buttons behaviour here if have them.
+                        // Back button pressed
+                        activity?.onBackPressedDispatcher?.onBackPressed()
                         true
                     }
                 }
@@ -75,8 +76,11 @@ class FlavorFragment : Fragment() {
     fun goToNextScreen () {
         findNavController().navigate(R.id.action_flavorFragment_to_sizeFragment)
 
-        // Set default pizza's size
-        sharedOrderViewModel.setSize(DEFAULT_PIZZA_SIZE)
+        // Set the default pizza's size
+        if(sharedOrderViewModel.hasNoSizeSet()){
+            sharedOrderViewModel.setSize(30)
+        }
+
     }
 
     fun cancelOrder() {

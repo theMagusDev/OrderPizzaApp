@@ -126,6 +126,10 @@ class OrderViewModel : ViewModel() {
         return _date.value.isNullOrEmpty()
     }
 
+    fun hasNoSizeSet(): Boolean {
+        return (_size.value == null) or (_size.value == 0)
+    }
+
     fun resetOrder() {
         _total.value = 0.0
         _quantity.value = 0
