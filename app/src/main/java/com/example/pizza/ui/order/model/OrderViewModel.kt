@@ -98,11 +98,14 @@ class OrderViewModel : ViewModel() {
         if(!_flavors.value.isNullOrEmpty()) {
             for (flavor in _flavors.value!!) {
                 when (flavor) {
-                    "Bacon" -> calculatedTotal += 2.00
-                    "Sausage" -> calculatedTotal += 2.50
-                    "Extra Cheese" -> calculatedTotal += 2.75
+                    "Cheese" -> calculatedTotal += 2.75
                     "Mushrooms" -> calculatedTotal += 3.00
                     "Onions" -> calculatedTotal += 2.50
+                    "Tomatoes" -> calculatedTotal += 1.75
+                    "Black olives" -> calculatedTotal += 2.05
+                    "Bacon" -> calculatedTotal += 2.00
+                    "Chicken" -> calculatedTotal += 4.00
+                    "Shrimp" -> calculatedTotal += 4.50
                     else -> {}
                 }
             }

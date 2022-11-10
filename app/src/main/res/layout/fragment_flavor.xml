@@ -28,25 +28,14 @@
 
             <CheckBox
                 style="@style/Widget.Pizza.Checkbox"
-                android:id="@+id/bacon_checkbox"
+                android:id="@+id/cheese_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/bacon"
-                android:checked="@{orderViewModel.flavors.contains(@string/bacon)}"
-                android:onClick="@{() -> orderViewModel.addOrRemoveFlavor(@string/bacon)}"
+                android:text="@string/cheese"
+                android:checked="@{orderViewModel.flavors.contains(@string/cheese)}"
+                android:onClick="@{() -> orderViewModel.addOrRemoveFlavor(@string/cheese)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
-
-            <CheckBox
-                style="@style/Widget.Pizza.Checkbox"
-                android:id="@+id/extra_cheese_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/extra_cheese"
-                android:checked="@{orderViewModel.flavors.contains(@string/extra_cheese)}"
-                android:onClick="@{() -> orderViewModel.addOrRemoveFlavor(@string/extra_cheese)}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bacon_checkbox"/>
 
             <CheckBox
                 style="@style/Widget.Pizza.Checkbox"
@@ -57,7 +46,7 @@
                 android:checked="@{orderViewModel.flavors.contains(@string/mushrooms)}"
                 android:onClick="@{() -> orderViewModel.addOrRemoveFlavor(@string/mushrooms)}"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/extra_cheese_checkbox"/>
+                app:layout_constraintTop_toBottomOf="@id/cheese_checkbox"/>
 
             <CheckBox
                 style="@style/Widget.Pizza.Checkbox"
@@ -72,14 +61,58 @@
 
             <CheckBox
                 style="@style/Widget.Pizza.Checkbox"
-                android:id="@+id/sausage_checkbox"
+                android:id="@+id/tomatoes_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sausage"
-                android:checked="@{orderViewModel.flavors.contains(@string/sausage)}"
-                android:onClick="@{() -> orderViewModel.addOrRemoveFlavor(@string/sausage)}"
+                android:text="@string/tomatoes"
+                android:checked="@{orderViewModel.flavors.contains(@string/tomatoes)}"
+                android:onClick="@{() -> orderViewModel.addOrRemoveFlavor(@string/tomatoes)}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/onions_checkbox"/>
+
+            <CheckBox
+                style="@style/Widget.Pizza.Checkbox"
+                android:id="@+id/black_olives_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/black_olives"
+                android:checked="@{orderViewModel.flavors.contains(@string/black_olives)}"
+                android:onClick="@{() -> orderViewModel.addOrRemoveFlavor(@string/black_olives)}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tomatoes_checkbox"/>
+
+            <CheckBox
+                style="@style/Widget.Pizza.Checkbox"
+                android:id="@+id/bacon_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bacon"
+                android:checked="@{orderViewModel.flavors.contains(@string/bacon)}"
+                android:onClick="@{() -> orderViewModel.addOrRemoveFlavor(@string/bacon)}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/black_olives_checkbox"/>
+
+            <CheckBox
+                style="@style/Widget.Pizza.Checkbox"
+                android:id="@+id/chicken_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/chicken"
+                android:checked="@{orderViewModel.flavors.contains(@string/chicken)}"
+                android:onClick="@{() -> orderViewModel.addOrRemoveFlavor(@string/chicken)}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bacon_checkbox"/>
+
+            <CheckBox
+                style="@style/Widget.Pizza.Checkbox"
+                android:id="@+id/shrimp_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/shrimp"
+                android:checked="@{orderViewModel.flavors.contains(@string/shrimp)}"
+                android:onClick="@{() -> orderViewModel.addOrRemoveFlavor(@string/shrimp)}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chicken_checkbox"/>
 
             <com.google.android.material.divider.MaterialDivider
                 android:id="@+id/flavors_divider"
@@ -88,7 +121,7 @@
                 android:layout_margin="@dimen/margin_between_elements"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/sausage_checkbox"/>
+                app:layout_constraintTop_toBottomOf="@id/shrimp_checkbox"/>
 
             <TextView
                 style="@style/Widget.Pizza.TextView.Subtotal"

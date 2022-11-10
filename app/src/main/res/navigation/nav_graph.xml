@@ -58,7 +58,7 @@
     <fragment
         android:id="@+id/summaryFragment"
         android:name="com.example.pizza.ui.order.SummaryFragment"
-        android:label="SummaryFragment" >
+        android:label="Summary" >
         <action
             android:id="@+id/action_summaryFragment_to_startFragment"
             app:destination="@id/startFragment"

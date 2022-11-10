@@ -15,9 +15,13 @@
     <string name="subtotal">Subtotal: %s</string>
     <string name="sausage">Sausage</string>
     <string name="bacon">Bacon</string>
-    <string name="extra_cheese">Extra Cheese</string>
+    <string name="chicken">Chicken</string>
+    <string name="cheese">Cheese</string>
     <string name="mushrooms">Mushrooms</string>
     <string name="onions">Onions</string>
+    <string name="tomatoes">Tomatoes</string>
+    <string name="black_olives">Black olives</string>
+    <string name="shrimp">Shrimp</string>
     <string name="quantity">Quantity</string>
     <string name="flavors">Flavors</string>
     <string name="size">Size</string>
